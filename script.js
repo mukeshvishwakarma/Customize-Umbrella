@@ -18,18 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const showSpinner = (color) => {
         spinnerIcon.style.display = "flex";
         spinnerCircle.style.stroke = color; // Change spinner SVG color
+        umbrellaImage.style.display = "none"; // Hide umbrella image
     };
 
     // Hide spinner function
     const hideSpinner = () => {
         spinnerIcon.style.display = "none";
+        umbrellaImage.style.display = "block"; // Show umbrella image
     };
 
     // Handle color change
     colorSwatches.forEach((swatch) => {
         swatch.addEventListener("click", () => {
             const color = swatch.getAttribute("data-color");
-            umbrellaImage.src = ""; // Remove previous image
             showSpinner(colorMap[color]);
             setTimeout(() => {
                 umbrellaImage.src = `assets/umbrella-${color}.png`;
