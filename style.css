@@ -33,7 +33,7 @@ body {
 }
 
 .umbrella-preview img {
-    max-width: 45%;
+    max-width: 60%;
 }
 
 #logo-image {
@@ -122,52 +122,16 @@ body {
     background-color: rgb(235, 209, 15);
 }
 
-.rotating {
-    animation: rotate 1s linear;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.spinner {
-    display: none;
-    
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-.spinner svg {
-    animation: spin 2s linear infinite;
-}
-
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .spinner {
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none; /* Initially hidden */
 }
 
@@ -177,9 +141,11 @@ body {
     animation: spin 2s linear infinite; /* Continuous rotation */
 }
 
-.spinner circle {
+.spinner path {
     stroke-dasharray: 150;
     stroke-dashoffset: 0;
+    color: #ccc;
+    /* filter: brightness(0) invert(1); */
 }
 
 @keyframes spin {
