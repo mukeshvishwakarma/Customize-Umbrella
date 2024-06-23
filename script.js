@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fileInfo = document.getElementById("file-info");
     const fileNameSpan = document.getElementById("file-name");
     const cancelUploadButton = document.getElementById("cancel-upload");
-    const uploadtext = document.getElementById("upload-text");
-    
+    const uploadText = document.getElementById("upload-text");
     const messageDiv = document.getElementById('message');
 
     // Define color map for button background colors
@@ -18,6 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
         pink: "rgb(253, 94, 120)",
         blue: "rgb(76, 156, 255)",
         yellow: "rgb(235, 209, 15)",
+    };
+
+    // Function to convert RGB to RGBA with transparency
+    const addTransparency = (color, alpha) => {
+        const [r, g, b] = color.match(/\d+/g).map(Number);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     };
 
     // Show spinner function with color parameter
@@ -47,6 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Change the upload button background color
             uploadButton.style.backgroundColor = colorMap[color];
+
+            // Change the page background color to a lighter shade
+            const lightColor = addTransparency(colorMap[color], 0.10); // Adjust the transparency for lighter color
+            document.body.style.backgroundColor = lightColor;
         });
     });
 
@@ -81,17 +90,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 fileNameSpan.textContent = file.name;
                 fileInfo.style.display = "flex";
                 messageDiv.textContent = ''; // Clear any previous messages
-                uploadtext.style.display = "none";
+                uploadText.style.display = "none";
             }
         }
     });
 
     // Handle cancel upload
     cancelUploadButton.addEventListener("click", () => {
-        logoUpload.value = ''; // Clear the file input
-        logoImage.src = ''; // Remove the displayed logo
+         // Reset file input
+        logoUpload.value = '';
+
+        // Reset image display
+        logoImage.src = '';
         logoImage.style.display = "none";
-        fileInfo.style.display = "none"; // Hide file info
-        uploadtext.style.display = "block"; 
+
+        // Hide file info and show upload text
+        fileInfo.style.display = "none";
+        uploadText.style.display = "block"; 
     });
 });

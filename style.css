@@ -62,7 +62,7 @@ body {
 
 .customization-options p {
     margin-top: -16px;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 #logo-upload-label {
@@ -83,6 +83,7 @@ body {
     font-size: 16px;
     outline: none;
     width: 15rem;
+    height: 25px;
     transition: background-color 0.3s ease;
     position: absolute;
 }
@@ -90,16 +91,16 @@ body {
 .upload-button img {
     width: 20px;
     height: 20px;
-    margin-right: 10px;
+    margin-right: 170px;
     filter: brightness(0) invert(1);
     margin-left: -50px;
-    margin-top: 2px;
+    margin-top: 24px;
 }
 
 .upload-button span {
     display: inline-block;
     vertical-align: middle;
-    margin-top: -7px;
+    margin-top: -26px;
 }
 
 .color-swatch {
@@ -150,8 +151,8 @@ body {
 #file-name {
     text-transform: uppercase;
     text-align: center;
-    margin-left: 90px;
-    margin-top: -16px;
+    margin-left: 70px;
+    margin-top: -18px;
 }
 @keyframes spin {
     0% {
@@ -172,7 +173,6 @@ body {
     position: absolute;
     margin-left: 230px;
     margin-top: -12px;
-    /* top: 3px; */
-    /* top: 50%; */
+    
     transform: translateY(-50%);
 }
