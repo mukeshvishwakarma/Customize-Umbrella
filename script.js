@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const uploadButton = document.querySelector(".upload-button");
     const spinnerIcon = document.getElementById("spinner-icon");
     const spinnerCircle = document.querySelector("#spinner-svg path");
+    const fileInfo = document.getElementById("file-info");
+    const fileNameSpan = document.getElementById("file-name");
+    const cancelUploadButton = document.getElementById("cancel-upload");
+    const uploadtext = document.getElementById("upload-text");
+    
+    const messageDiv = document.getElementById('message');
 
     // Define color map for button background colors
     const colorMap = {
@@ -47,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Handle logo upload
     logoUpload.addEventListener("change", (event) => {
         const file = event.target.files[0];
-        const messageDiv = document.getElementById('message');
 
         if (file) {
             const validExtensions = ['image/png', 'image/jpeg'];
@@ -71,8 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 1000);
                 };
                 reader.readAsDataURL(file);
+
+                // Display file info and the cancel button
+                fileNameSpan.textContent = file.name;
+                fileInfo.style.display = "flex";
                 messageDiv.textContent = ''; // Clear any previous messages
+                uploadtext.style.display = "none";
             }
         }
+    });
+
+    // Handle cancel upload
+    cancelUploadButton.addEventListener("click", () => {
+        logoUpload.value = ''; // Clear the file input
+        logoImage.src = ''; // Remove the displayed logo
+        logoImage.style.display = "none";
+        fileInfo.style.display = "none"; // Hide file info
+        uploadtext.style.display = "block"; 
     });
 });

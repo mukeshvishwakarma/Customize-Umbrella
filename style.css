@@ -84,6 +84,7 @@ body {
     outline: none;
     width: 15rem;
     transition: background-color 0.3s ease;
+    position: absolute;
 }
 
 .upload-button img {
@@ -144,10 +145,14 @@ body {
 .spinner path {
     stroke-dasharray: 150;
     stroke-dashoffset: 0;
-    color: #ccc;
-    /* filter: brightness(0) invert(1); */
 }
 
+#file-name {
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 90px;
+    margin-top: -16px;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -155,4 +160,19 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+#cancel-upload {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 230px;
+    margin-top: -12px;
+    /* top: 3px; */
+    /* top: 50%; */
+    transform: translateY(-50%);
 }
