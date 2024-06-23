@@ -150,3 +150,31 @@ body {
 }
 
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Initially hidden */
+}
+
+.spinner svg {
+    width: 100%;
+    height: 100%;
+    animation: spin 2s linear infinite; /* Continuous rotation */
+}
+
+.spinner circle {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
+}
