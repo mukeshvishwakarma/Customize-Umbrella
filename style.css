@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9f9fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.customizer {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 100%;
+}
+
+.customizer h1 {
+    margin-bottom: 20px;
+}
+
+.customizer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.umbrella-preview {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.umbrella-preview img {
+    max-width: 45%;
+}
+
+#logo-image {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+}
+
+.customization-options {
+    flex: 1;
+    text-align: left;
+}
+
+.customization-options h2 {
+    margin-bottom: 10px;
+}
+
+.customization-options article {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.customization-options p {
+    margin-top: -16px;
+    font-size: 13px;
+}
+
+#logo-upload-label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(253, 94, 120);
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    width: 15rem;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.upload-button span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.color-swatch.pink {
+    background-color: rgb(253, 94, 120);
+}
+
+.color-swatch.blue {
+    background-color: rgb(76, 156, 255);
+}
+
+.color-swatch.yellow {
+    background-color: rgb(235, 209, 15);
+}
+
+.rotating {
+    animation: rotate 1s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: none;
+    
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.spinner svg {
+    animation: spin 2s linear infinite;
+}
+
+

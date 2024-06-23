@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbrella Customizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="customizer">
+        <div class="customizer-container">
+            <div class="umbrella-preview">
+                <img id="umbrella-image" src="assets/umbrella-pink.png" alt="Umbrella">
+                <img id="logo-image" src="" alt="Logo" style="display: none;">
+                <div id="spinner-icon" class="spinner" style="display: none;">
+                    <!-- SVG Icon -->
+                    
+                    <img src="assets/loader_icon.svg" alt="Loader Icon">
+                </div>
+                
+            </div>
+            <div class="customization-options">
+                <h2>Customize Umbrella</h2>
+                <div class="color-swatches">
+                    <button class="color-swatch pink" data-color="pink"></button>
+                    <button class="color-swatch blue" data-color="blue"></button>
+                    <button class="color-swatch yellow" data-color="yellow"></button>
+                </div>
+                <h4>Customize your umbrella</h4>
+                <p>Upload a logo for an instant preview.</p>
+                <article>.png and .jpg files only. max size 5MB.</article>
+                <label id="logo-upload-label" for="logo-upload" class="upload-button">
+                    <img src="assets/upload.svg" alt="Upload Icon">
+                    <span>Upload Logo</span>
+                </label>
+                <input type="file" id="logo-upload" accept="image/*" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
